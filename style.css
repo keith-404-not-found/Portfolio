@@ -2,18 +2,15 @@
 
 :root {
 
-  --primary-color: #2563eb;
-  /* Modern royal blue */
+  --primary-color: #2563eb;       /* Modern royal blue */
 
   --primary-hover: #1d4ed8;
 
-  --bg-color: #f8fafc;
-  /* Off-white background */
+  --bg-color: #f8fafc;            /* Off-white background */
 
   --surface-color: #ffffff;
 
-  --text-main: #0f172a;
-  /* Dark slate instead of harsh black */
+  --text-main: #0f172a;           /* Dark slate instead of harsh black */
 
   --text-muted: #475569;
 
@@ -107,8 +104,7 @@ body {
 
 /* Buttons */
 
-.btn-primary,
-.btn-secondary {
+.btn-primary, .btn-secondary {
 
   display: inline-block;
 
@@ -182,7 +178,7 @@ nav {
 
   z-index: 100;
 
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 
 }
 
@@ -248,8 +244,7 @@ section {
 
   margin: 4rem 0;
 
-  padding-top: 2rem;
-  /* Offset for sticky nav */
+  padding-top: 2rem; /* Offset for sticky nav */
 
   scroll-margin-top: 80px;
 
@@ -443,7 +438,7 @@ footer {
 
   /* align-items: start ensures the columns don't stretch vertically to match each other */
 
-  align-items: start;
+  align-items: start; 
 
 }
 
@@ -459,8 +454,7 @@ footer {
 
   margin-bottom: 1.25rem;
 
-  border-bottom: 1px solid #cbd5e1;
-  /* Thinner, lighter line to match the image */
+  border-bottom: 1px solid #cbd5e1; /* Thinner, lighter line to match the image */
 
   padding-bottom: 0.5rem;
 
@@ -480,8 +474,7 @@ footer {
 
   border-radius: 6px;
 
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  /* Softer shadow */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Softer shadow */
 
   border: 1px solid #e2e8f0;
 
@@ -511,7 +504,7 @@ footer {
 
 .resume-item p {
 
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.75rem; 
 
   color: var(--text-muted);
 
@@ -525,7 +518,7 @@ footer {
 
   display: inline-block;
 
-  background: #e0f2fe;
+  background: #e0f2fe; 
 
   color: var(--primary-color);
 
@@ -581,8 +574,7 @@ footer {
 
 .skills-list strong {
 
-  color: var(--text-main);
-  /* Makes the category names darker */
+  color: var(--text-main); /* Makes the category names darker */
 
   font-weight: 600;
 
@@ -621,193 +613,5 @@ footer {
   text-decoration: none;
 
   font-weight: 600;
-
-}
-
-
-
-/* =========================================
-
-   Media Queries for Responsiveness
-
-   ========================================= */
-
-
-
-/* Tablets and Small Desktops (under 1024px) */
-
-@media (max-width: 1024px) {
-
-  .hero h1 {
-
-    font-size: 2.8rem;
-
-  }
-
-
-
-  main {
-
-    max-width: 95%;
-
-    padding: 2rem;
-
-  }
-
-}
-
-
-
-/* Tablets and Large Mobile Devices (under 768px) */
-
-@media (max-width: 768px) {
-
-  /* 1. Hero Adjustments */
-
-  .hero {
-
-    min-height: 40vh;
-
-    padding: 3rem 1.5rem;
-
-  }
-
-
-
-  .hero h1 {
-
-    font-size: 2.25rem;
-
-  }
-
-
-
-  .subtitle {
-
-    font-size: 1rem;
-
-    margin-bottom: 1.5rem;
-
-  }
-
-
-
-  /* 2. Navigation Adjustments */
-
-  .nav-links {
-
-    gap: 1rem;
-
-    flex-wrap: wrap;
-    /* Allows links to wrap to a second line if crowded */
-
-    padding: 0.75rem;
-
-  }
-
-
-
-  nav a {
-
-    font-size: 0.85rem;
-
-  }
-
-
-
-  /* 3. Typography & Spacing */
-
-  h2 {
-
-    font-size: 1.75rem;
-
-  }
-
-
-
-  section {
-
-    margin: 3rem 0;
-
-  }
-
-
-
-  /* 4. Grid Adjustments 
-
-     Forces cards to stack vertically if the screen is too narrow 
-
-     for the 300px minmax definition */
-
-  .project-grid,
-
-  .resume-layout {
-
-    grid-template-columns: 1fr;
-
-    gap: 1.5rem;
-
-  }
-
-
-
-  /* 5. Card Padding Adjustments */
-
-  .project-card,
-
-  .resume-item {
-
-    padding: 1.25rem;
-
-  }
-
-}
-
-
-
-/* Small Mobile Devices (under 480px) */
-
-@media (max-width: 480px) {
-
-  .hero h1 {
-
-    font-size: 1.8rem;
-
-  }
-
-
-
-  /* Make buttons full-width for easier tapping on small phones */
-
-  .btn-primary,
-
-  .btn-secondary {
-
-    display: block;
-
-    width: 100%;
-
-    text-align: center;
-
-    margin-top: 0.75rem;
-
-  }
-
-
-
-  .btn-secondary {
-
-    margin-top: 0.75rem;
-    /* Even spacing between stacked buttons */
-
-  }
-
-
-
-  .nav-links {
-
-    gap: 0.75rem;
-
-  }
 
 }
