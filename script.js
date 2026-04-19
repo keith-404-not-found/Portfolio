@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   if (savedTheme === 'dark') {
     htmlTag.setAttribute('data-theme', 'dark');
-    themeToggleBtn.textContent = '☀️';
+    themeToggleBtn.textContent ;
   } else {
-    themeToggleBtn.textContent = '🌙'; 
+    themeToggleBtn.textContent =; 
   }
 
   // Toggle themes on click
@@ -52,12 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Switch to Light Mode
         htmlTag.removeAttribute('data-theme');
         localStorage.setItem('portfolio-theme', 'light');
-        themeToggleBtn.textContent = '🌙';
+        themeToggleBtn.textContent = ;
       } else {
         // Switch to Dark Mode
         htmlTag.setAttribute('data-theme', 'dark');
         localStorage.setItem('portfolio-theme', 'dark');
-        themeToggleBtn.textContent = '☀️';
+        themeToggleBtn.textContent = ;
       }
     });
   }
