@@ -9,6 +9,18 @@
   --transition: all 0.3s ease;
 }
 
+/* =========================================
+   Dark Mode Variables & Overrides
+   ========================================= */
+[data-theme="dark"] {
+  --primary-color: #3b82f6;       /* Slightly lighter blue for dark mode visibility */
+  --primary-hover: #60a5fa;
+  --bg-color: #0f172a;            /* Dark slate background */
+  --surface-color: #1e293b;       /* Slightly lighter dark slate for cards */
+  --text-main: #f8fafc;           /* Off-white text */
+  --text-muted: #94a3b8;          /* Light gray for muted text */
+}
+
 /* Reset & Typography */
 * {
   margin: 0;
@@ -22,6 +34,8 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   scroll-behavior: smooth;
+  /* Added transition for smooth theme switching */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hero Section (Header) */
@@ -34,6 +48,11 @@ body {
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%); 
 }
 
 .hero h1 {
@@ -89,6 +108,12 @@ nav {
   top: 0;
   z-index: 100;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] nav {
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 1px 3px rgba(255,255,255,0.05);
 }
 
 .nav-links {
@@ -112,6 +137,24 @@ nav a:hover {
   color: var(--primary-color);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: var(--transition);
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
 /* Main Content & Sections */
 main {
   max-width: 900px;
@@ -133,7 +176,6 @@ h2 {
   display: inline-block;
 }
 
-/* Small underline accent for headers */
 h2::after {
   content: '';
   position: absolute;
@@ -164,6 +206,10 @@ p {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   border: 1px solid #e2e8f0;
   transition: var(--transition);
+}
+
+[data-theme="dark"] .project-card {
+  border-color: #334155;
 }
 
 .project-card:hover {
@@ -211,37 +257,42 @@ footer {
   transform: translateY(0);
 }
 
-/* --- New Resume Layout Styles --- */
+/* Resume Layout Styles */
 .resume-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-  /* align-items: start ensures the columns don't stretch vertically to match each other */
   align-items: start; 
 }
 
-/* Section Headers (Experience, Education, etc.) */
 .resume-column h3 {
   font-size: 1.25rem;
   color: var(--primary-color);
   margin-bottom: 1.25rem;
-  border-bottom: 1px solid #cbd5e1; /* Thinner, lighter line to match the image */
+  border-bottom: 1px solid #cbd5e1;
   padding-bottom: 0.5rem;
   font-weight: 600;
 }
 
-/* The White Cards */
+[data-theme="dark"] .resume-column h3 {
+  border-bottom-color: #334155; 
+}
+
 .resume-item {
   background: var(--surface-color);
   padding: 1.5rem;
   border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Softer shadow */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   border: 1px solid #e2e8f0;
   margin-bottom: 1.5rem;
+  transition: var(--transition);
 }
 
-/* Card Titles (Job Titles, Degrees) */
+[data-theme="dark"] .resume-item {
+  border-color: #334155;
+}
+
 .resume-item h4 {
   color: var(--text-main);
   margin-bottom: 0.5rem;
@@ -249,13 +300,11 @@ footer {
   font-weight: 700;
 }
 
-/* Card Subtitles (Company Name, School Name) */
 .resume-item p {
   margin-bottom: 0.75rem; 
   color: var(--text-muted);
 }
 
-/* Light Blue Date Badges */
 .date-badge {
   display: inline-block;
   background: #e0f2fe; 
@@ -267,7 +316,11 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* Bullet Points */
+[data-theme="dark"] .date-badge {
+  background: #1e3a8a; 
+  color: #bfdbfe;      
+}
+
 .resume-item ul {
   padding-left: 1.2rem;
   color: var(--text-muted);
@@ -278,7 +331,6 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* Skills Section Specifics */
 .skills-list p {
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -286,11 +338,10 @@ footer {
 }
 
 .skills-list strong {
-  color: var(--text-main); /* Makes the category names darker */
+  color: var(--text-main);
   font-weight: 600;
 }
 
-/* Contact Details Footer Grid */
 .contact-info-grid {
   margin-top: 1.5rem;
   background: var(--surface-color);
@@ -300,10 +351,107 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .contact-info-grid {
+  border-color: #334155;
 }
 
 .contact-info-grid a {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
+}
+
+/* =========================================
+   Media Queries for Responsiveness
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  main {
+    max-width: 95%;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 40vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Nav Links adjust to accommodate the toggle button */
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap; 
+    padding: 0.75rem 3.5rem 0.75rem 1rem; /* Right padding ensures links don't hide under the button */
+    justify-content: flex-start;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  /* Keep toggle pinned nicely to the top right */
+  .theme-toggle {
+    top: 0.75rem;
+    right: 1rem;
+    transform: none; /* Removes the 50% translation used for vertical centering on desktop */
+  }
+
+  .theme-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  section {
+    margin: 3rem 0;
+  }
+
+  .project-grid,
+  .resume-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card,
+  .resume-item {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-primary, 
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.75rem;
+  }
+  
+  .nav-links {
+    gap: 0.75rem;
+    padding-right: 3rem; /* Maintain spacing for the toggle button */
+  }
 }
