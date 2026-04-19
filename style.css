@@ -1,617 +1,309 @@
 /* Custom Properties (Variables) */
-
 :root {
-
   --primary-color: #2563eb;       /* Modern royal blue */
-
   --primary-hover: #1d4ed8;
-
   --bg-color: #f8fafc;            /* Off-white background */
-
   --surface-color: #ffffff;
-
   --text-main: #0f172a;           /* Dark slate instead of harsh black */
-
   --text-muted: #475569;
-
   --transition: all 0.3s ease;
-
 }
-
-
 
 /* Reset & Typography */
-
 * {
-
   margin: 0;
-
   padding: 0;
-
   box-sizing: border-box;
-
 }
-
-
 
 body {
-
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-
   line-height: 1.6;
-
   background-color: var(--bg-color);
-
   color: var(--text-main);
-
   scroll-behavior: smooth;
-
 }
-
-
 
 /* Hero Section (Header) */
-
 .hero {
-
   background: linear-gradient(135deg, var(--text-main) 0%, #1e293b 100%);
-
   color: white;
-
   min-height: 60vh;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   text-align: center;
-
   padding: 2rem;
-
 }
-
-
 
 .hero h1 {
-
   font-size: 3.5rem;
-
   font-weight: 700;
-
   margin-bottom: 0.5rem;
-
   letter-spacing: -1px;
-
 }
-
-
 
 .subtitle {
-
   font-size: 1.2rem;
-
   color: #cbd5e1;
-
   margin-bottom: 2rem;
-
   font-weight: 300;
-
 }
-
-
 
 /* Buttons */
-
 .btn-primary, .btn-secondary {
-
   display: inline-block;
-
   padding: 0.8rem 1.5rem;
-
   border-radius: 6px;
-
   text-decoration: none;
-
   font-weight: 600;
-
   transition: var(--transition);
-
 }
-
-
 
 .btn-primary {
-
   background: var(--primary-color);
-
   color: white;
-
 }
-
-
 
 .btn-primary:hover {
-
   background: var(--primary-hover);
-
   transform: translateY(-2px);
-
 }
-
-
 
 .btn-secondary {
-
   border: 2px solid var(--primary-color);
-
   color: var(--primary-color);
-
   margin-top: 1rem;
-
 }
-
-
 
 .btn-secondary:hover {
-
   background: var(--primary-color);
-
   color: white;
-
 }
-
-
 
 /* Sticky Navigation */
-
 nav {
-
   background: rgba(255, 255, 255, 0.95);
-
   backdrop-filter: blur(10px);
-
   position: sticky;
-
   top: 0;
-
   z-index: 100;
-
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-
 }
-
-
 
 .nav-links {
-
   display: flex;
-
   justify-content: center;
-
   gap: 2rem;
-
   padding: 1rem;
-
   max-width: 1000px;
-
   margin: 0 auto;
-
 }
-
-
 
 nav a {
-
   color: var(--text-muted);
-
   text-decoration: none;
-
   font-weight: 600;
-
   font-size: 0.95rem;
-
   transition: var(--transition);
-
 }
-
-
 
 nav a:hover {
-
   color: var(--primary-color);
-
 }
-
-
 
 /* Main Content & Sections */
-
 main {
-
   max-width: 900px;
-
   margin: 0 auto;
-
   padding: 2rem 1rem;
-
 }
-
-
 
 section {
-
   margin: 4rem 0;
-
   padding-top: 2rem; /* Offset for sticky nav */
-
   scroll-margin-top: 80px;
-
 }
-
-
 
 h2 {
-
   font-size: 2rem;
-
   color: var(--text-main);
-
   margin-bottom: 1.5rem;
-
   position: relative;
-
   display: inline-block;
-
 }
-
-
 
 /* Small underline accent for headers */
-
 h2::after {
-
   content: '';
-
   position: absolute;
-
   width: 40px;
-
   height: 4px;
-
   background: var(--primary-color);
-
   bottom: -8px;
-
   left: 0;
-
   border-radius: 2px;
-
 }
-
-
 
 p {
-
   color: var(--text-muted);
-
 }
-
-
 
 /* Project Grid */
-
 .project-grid {
-
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   gap: 1.5rem;
-
   margin-top: 2rem;
-
 }
-
-
 
 .project-card {
-
   background: var(--surface-color);
-
   padding: 2rem;
-
   border-radius: 12px;
-
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-
   border: 1px solid #e2e8f0;
-
   transition: var(--transition);
-
 }
-
-
 
 .project-card:hover {
-
   transform: translateY(-5px);
-
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-
 }
-
-
 
 .project-card h3 {
-
   margin-bottom: 0.5rem;
-
   color: var(--text-main);
-
 }
-
-
 
 /* Contact Links */
-
 .contact-links {
-
   margin-top: 1.5rem;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 0.5rem;
-
 }
-
-
 
 .contact-links a {
-
   color: var(--primary-color);
-
   text-decoration: none;
-
   font-weight: 600;
-
 }
-
-
 
 /* Footer */
-
 footer {
-
   text-align: center;
-
   padding: 2rem;
-
   color: var(--text-muted);
-
   border-top: 1px solid #e2e8f0;
-
   margin-top: 4rem;
-
 }
-
-
 
 /* Scroll Animation */
-
 .reveal {
-
   opacity: 0;
-
   transform: translateY(30px);
-
   transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-
 }
-
-
 
 .reveal.show {
-
   opacity: 1;
-
   transform: translateY(0);
-
 }
-
-
 
 /* --- New Resume Layout Styles --- */
-
 .resume-layout {
-
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
   gap: 2rem;
-
   margin-top: 2rem;
-
   /* align-items: start ensures the columns don't stretch vertically to match each other */
-
   align-items: start; 
-
 }
-
-
 
 /* Section Headers (Experience, Education, etc.) */
-
 .resume-column h3 {
-
   font-size: 1.25rem;
-
   color: var(--primary-color);
-
   margin-bottom: 1.25rem;
-
   border-bottom: 1px solid #cbd5e1; /* Thinner, lighter line to match the image */
-
   padding-bottom: 0.5rem;
-
   font-weight: 600;
-
 }
-
-
 
 /* The White Cards */
-
 .resume-item {
-
   background: var(--surface-color);
-
   padding: 1.5rem;
-
   border-radius: 6px;
-
   box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Softer shadow */
-
   border: 1px solid #e2e8f0;
-
   margin-bottom: 1.5rem;
-
 }
-
-
 
 /* Card Titles (Job Titles, Degrees) */
-
 .resume-item h4 {
-
   color: var(--text-main);
-
   margin-bottom: 0.5rem;
-
   font-size: 1rem;
-
   font-weight: 700;
-
 }
-
-
 
 /* Card Subtitles (Company Name, School Name) */
-
 .resume-item p {
-
   margin-bottom: 0.75rem; 
-
   color: var(--text-muted);
-
 }
-
-
 
 /* Light Blue Date Badges */
-
 .date-badge {
-
   display: inline-block;
-
   background: #e0f2fe; 
-
   color: var(--primary-color);
-
   font-size: 0.8rem;
-
   font-weight: 600;
-
   padding: 0.3rem 0.75rem;
-
   border-radius: 4px;
-
   margin-bottom: 1rem;
-
 }
-
-
 
 /* Bullet Points */
-
 .resume-item ul {
-
   padding-left: 1.2rem;
-
   color: var(--text-muted);
-
   font-size: 0.95rem;
-
 }
-
-
 
 .resume-item li {
-
   margin-bottom: 0.5rem;
-
 }
-
-
 
 /* Skills Section Specifics */
-
 .skills-list p {
-
   margin-bottom: 1rem;
-
   font-size: 0.95rem;
-
   line-height: 1.5;
-
 }
-
-
 
 .skills-list strong {
-
   color: var(--text-main); /* Makes the category names darker */
-
   font-weight: 600;
-
 }
-
-
 
 /* Contact Details Footer Grid */
-
 .contact-info-grid {
-
   margin-top: 1.5rem;
-
   background: var(--surface-color);
-
   padding: 1.5rem;
-
   border-radius: 6px;
-
   border: 1px solid #e2e8f0;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 0.5rem;
-
 }
 
-
-
 .contact-info-grid a {
-
   color: var(--primary-color);
-
   text-decoration: none;
-
   font-weight: 600;
-
 }
