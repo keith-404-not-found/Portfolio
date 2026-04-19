@@ -394,27 +394,21 @@ footer {
     margin-bottom: 1.5rem;
   }
 
-  /* Nav Links adjust to accommodate the toggle button */
+  /* Added a 4rem right padding to act as a shield so links never slide under the button */
   .nav-links {
     gap: 1rem;
     flex-wrap: wrap; 
-    padding: 0.75rem 3.5rem 0.75rem 1rem; /* Right padding ensures links don't hide under the button */
-    justify-content: flex-start;
+    padding: 0.75rem 4rem 0.75rem 1rem; 
+    justify-content: center;
   }
 
   nav a {
     font-size: 0.85rem;
   }
 
-  /* Keep toggle pinned nicely to the top right */
+  /* By only defining the 'right' position, it inherits the perfect top 50% centering from desktop */
   .theme-toggle {
-    top: 0.75rem;
     right: 1rem;
-    transform: none; /* Removes the 50% translation used for vertical centering on desktop */
-  }
-
-  .theme-toggle:hover {
-    transform: scale(1.1);
   }
 
   h2 {
@@ -452,6 +446,6 @@ footer {
   
   .nav-links {
     gap: 0.75rem;
-    padding-right: 3rem; /* Maintain spacing for the toggle button */
+    padding-right: 3.5rem; 
   }
 }
