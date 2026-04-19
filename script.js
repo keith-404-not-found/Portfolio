@@ -1,31 +1,5 @@
 // Wait for the DOM to fully load
 document.addEventListener("DOMContentLoaded", () => {
-  // Select all sections we want to animate
-  const sections = document.querySelectorAll(".reveal");
-
-  // Create an Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      // If the section comes into view
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        // Optional: Stop observing once revealed so it doesn't animate out and in again
-        // observer.unobserve(entry.target); 
-      }
-    });
-  }, {
-    // Triggers when 15% of the element is visible
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px" 
-  });
-
-  // Attach the observer to each section
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
-});
-// Wait for the DOM to fully load
-document.addEventListener("DOMContentLoaded", () => {
   
   // ==========================================
   // 1. Dark Mode Toggle Logic
@@ -38,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   if (savedTheme === 'dark') {
     htmlTag.setAttribute('data-theme', 'dark');
-    themeToggleBtn.textContent ;
+    themeToggleBtn.textContent = '☀️';
   } else {
-    themeToggleBtn.textContent =''; 
+    themeToggleBtn.textContent = '🌙'; 
   }
 
   // Toggle themes on click
@@ -52,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Switch to Light Mode
         htmlTag.removeAttribute('data-theme');
         localStorage.setItem('portfolio-theme', 'light');
-        themeToggleBtn.textContent = '' ;
+        themeToggleBtn.textContent = '🌙';
       } else {
         // Switch to Dark Mode
         htmlTag.setAttribute('data-theme', 'dark');
         localStorage.setItem('portfolio-theme', 'dark');
-        themeToggleBtn.textContent = '' ;
+        themeToggleBtn.textContent = '☀️';
       }
     });
   }
