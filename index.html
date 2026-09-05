@@ -133,21 +133,51 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section reveal">
-            <div class="boxed-title">CONTACT</div>
-            <p class="section-lead">Located in Sta. Cruz, Manila | Phone: 09193108057 | Email:
-                keithmaranan2104@gmail.com</p>
+<section id="contact" class="section reveal">
+  <div class="boxed-title">CONTACT</div>
+  <p class="section-lead">Located in Sta. Cruz, Manila | Phone: 09193108057 | Email: keithmaranan2104@gmail.com</p>
+  
+  <div class="divider"><i class="fa-solid fa-envelope"></i></div>
 
-            <div class="divider"><i class="fa-solid fa-envelope"></i></div>
-
-            <form class="contact-form" id="contactForm">
-                <input type="text" placeholder="ENTER YOUR NAME*" required class="form-input">
-                <input type="email" placeholder="ENTER YOUR EMAIL*" required class="form-input">
-                <input type="tel" placeholder="PHONE NUMBER" class="form-input">
-                <textarea placeholder="YOUR MESSAGE*" rows="5" required class="form-input"></textarea>
-                <button type="submit" class="btn-text btn-submit"><span>|</span> SUBMIT <span>|</span></button>
-            </form>
-        </section>
+  <!-- Updated Form with Formspree Integration -->
+  <form 
+    class="contact-form" 
+    action="https://formspree.io/f/mgaelwvd" 
+    method="POST"
+  >
+    <input 
+      type="text" 
+      name="name" 
+      placeholder="ENTER YOUR NAME*" 
+      required 
+      class="form-input"
+    >
+    <input 
+      type="email" 
+      name="email" 
+      placeholder="ENTER YOUR EMAIL*" 
+      required 
+      class="form-input"
+    >
+    <input 
+      type="tel" 
+      name="phone" 
+      placeholder="PHONE NUMBER" 
+      class="form-input"
+    >
+    <textarea 
+      name="message" 
+      placeholder="YOUR MESSAGE*" 
+      rows="5" 
+      required 
+      class="form-input"
+    ></textarea>
+    
+    <button type="submit" class="btn-text btn-submit">
+      <span>|</span> SUBMIT <span>|</span>
+    </button>
+  </form>
+</section>
 
         <!-- Footer -->
         <footer class="footer">
